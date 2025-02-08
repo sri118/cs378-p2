@@ -78,17 +78,25 @@ const menuItems = [
   }
 ];
 
-
 function App() {
-  return (
-    <div>
-      <h1>Menu</h1>
-      <div className="menu">
-        {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
-        <MenuItem title={menuItems[0].title} /> {/* Example for how to use a component */}
-      </div>
-    </div>
-  );
-}
+   return (
+     <div className="container my-4">
+       {/* Center Content */}
+       <header className="text-center">
+         <img src="/public/images/jap.jpg" alt="Japanese Cuisine Logo" className="logo img-fluid" />
+         <h1 className="decorative-text">Authentic Japanese Cuisine</h1>
+         <h2 className="subtitle-text">Experience the Art of Japanese Flavors!</h2>
+       </header>
+ 
+       {/* Menu Items */}
+       <main className="menu">
+         {menuItems.map((item) => (
+           <MenuItem key={item.id} {...item} />
+         ))}
+       </main>
+     </div>
+   );
+ }
+
 
 export default App;
